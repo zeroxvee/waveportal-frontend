@@ -1,5 +1,11 @@
 import { Modal, Stepper } from "@web3uikit/core"
 import { useState } from "react"
+import { useWaitForTransaction } from "wagmi"
+
+// TODO: Add modal popUp when wave/like/delete button are clicked
+// TODO: Add modal action onCancel, onCloseButtonPressed, onOk == StepperOnOk
+// TODO: Add transaction listener useWaitForTransaction
+// TODO: add auto stepper depending on transaction state including animation changes
 
 const TransactionModal = () => {
     const [step, setStep] = useState(0)
