@@ -4,23 +4,8 @@ import { WagmiConfig, createClient, configureChains, chain } from "wagmi"
 import { ConnectKitProvider, getDefaultClient } from "connectkit"
 import { publicProvider } from "wagmi/providers/public"
 
-const localChain = {
-    id: 31337,
-    name: "hardhat",
-    network: "hardhat",
-    nativeCurrency: {
-        decimals: 18,
-        name: "go",
-        symbol: "GO",
-    },
-    rpcUrls: {
-        default: "http://127.0.0.1:8545/",
-    },
-    testnet: true,
-}
-
 const { chains, provider, webSocketProvider } = configureChains(
-    [localChain, chain.hardhat],
+    [chain.hardhat, chain.goerli],
     [publicProvider()]
 )
 
